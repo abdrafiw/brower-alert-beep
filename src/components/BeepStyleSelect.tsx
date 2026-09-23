@@ -1,7 +1,4 @@
-import {
-  type AlertBeepStyle,
-  alertBeepStyles,
-} from "../hooks/useAlertSound";
+import { type AlertBeepStyle, alertBeepStyles } from "../hooks/useAlertSound";
 
 interface BeepStyleSelectProps {
   style: AlertBeepStyle;
@@ -18,7 +15,7 @@ export function BeepStyleSelect({
 
   return (
     <section className="style-panel" aria-labelledby="beep-style-heading">
-      <div>
+      <div className="">
         <p className="eyebrow">Browser beep style</p>
         <h2 id="beep-style-heading">Choose the alert tone.</h2>
       </div>

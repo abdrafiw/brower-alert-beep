@@ -16,10 +16,12 @@ export function AlertControls({
   return (
     <section className="controls-grid" aria-label="Alert sound controls">
       <div className="control-block">
-        <span className="label">Volume</span>
+        <label className="label" htmlFor="alert-volume">
+          Volume
+        </label>
         <div className="range-row">
           <input
-            aria-label="Alert volume"
+            id="alert-volume"
             type="range"
             min="0"
             max="1"
@@ -32,15 +34,19 @@ export function AlertControls({
       </div>
 
       <div className="control-block">
-        <span className="label">Interval demo</span>
-        <label className="switch-row">
+        <span className="label" id="interval-demo-heading">
+          Interval demo
+        </span>
+        <div className="switch-row">
           <input
+            id="interval-demo"
             type="checkbox"
+            aria-describedby="interval-demo-heading"
             checked={autoBeep}
             onChange={(event) => onAutoBeepChange(event.target.checked)}
           />
-          <span>Beep every 3 seconds</span>
-        </label>
+          <label htmlFor="interval-demo">Beep every 3 seconds</label>
+        </div>
       </div>
 
       <div className="metric-block">

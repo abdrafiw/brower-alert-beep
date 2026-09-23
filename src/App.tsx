@@ -36,12 +36,22 @@ function App() {
 
   const handleToggleSound = () => {
     toggle();
-    toast(enabled ? "Sound muted" : "Sound enabled");
+
+    if (enabled) {
+      toast.success("Sound enabled");
+    } else {
+      toast.error("Sound muted");
+    }
   };
 
   const handleAutoBeepChange = (nextAutoBeep: boolean) => {
     setAutoBeep(nextAutoBeep);
-    toast(nextAutoBeep ? "Interval demo started" : "Interval demo stopped");
+
+    if (nextAutoBeep) {
+      toast.success("Interval demo started");
+    } else {
+      toast.error("Interval demo stopped");
+    }
   };
 
   const handleStyleChange = (nextStyle: typeof style) => {
@@ -51,7 +61,7 @@ function App() {
 
   return (
     <>
-      <Toaster position="top-right" richColors closeButton />
+      <Toaster position="top-right" richColors />
       <main className="app-shell">
         <HeroPanel
           enabled={enabled}
